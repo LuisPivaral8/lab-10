@@ -18,6 +18,11 @@ const App = () => {
     setTasks(updatedTasks);
   };
 
+  //component that mannages to delete all tasks
+  const deleteAllTask = () => {
+    setTasks([]);
+  };
+
   return (
     <Container>
       <Row>
@@ -34,7 +39,8 @@ const App = () => {
       </Row>
       <Row className="justify-content-center mt-3">
         <Col md={6}>
-          <TaskList tasks={tasks} deleteTask={deleteTask} />
+          {/* Here was added the deleteAllTask function from tasklist  */}
+          <TaskList tasks={tasks} deleteTask={deleteTask} deleteAllTask={deleteAllTask} />
         </Col>
       </Row>
     </Container>
